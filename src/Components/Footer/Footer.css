@@ -1,0 +1,15 @@
+
+
+footer {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 12px; /* Decrease font size as needed */
+}

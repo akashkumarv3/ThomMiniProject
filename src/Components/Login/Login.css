@@ -1,0 +1,93 @@
+/* src/thomchild/Login.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+  position: relative;
+  gap: 0px;
+  opacity: 1;
+}
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../../assests/BG-img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent white background */
+  border-radius: 8px;
+  width: 360px; /* Hug width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adjust gap as needed */
+}
+
+.Thom-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 183px; /* Specific width */
+  height: 51px; /* Specific height */
+}
+
+.input-field, .login-button {
+  box-sizing: border-box;
+  width: 360px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #00C6B8;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white; /* White text color */
+}
+
+.input-field:focus {
+  border-color: #00C6B8; /* Ensure border color stays blue on focus */
+  outline: none; /* Remove the default outline */
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.eye-icon {
+  position: absolute;
+  width: 20px;
+  height: 13px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.login-button {
+  background-color: #00C6B8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #009b8e; /* Darker shade for hover */
+}
+
