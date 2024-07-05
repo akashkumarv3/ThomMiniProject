@@ -12,6 +12,7 @@ const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(true);
@@ -47,7 +48,23 @@ fetchUserProfile(employeeId, programId, referralId, bearerToken);
 
       } catch (error) {
         // Handle error, e.g., display error message
-        console.error('Login error:', error);
+       // Handle error
+    if (error.response) {
+    // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error('Error response data:', error.response.data);
+        console.error('Error response status:', error.response.status);
+        console.error('Error response headers:', error.response.headers);
+        setErrorMessage(error.response.data.message || 'An error occurred');
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error('Error request:', error.request);
+        setErrorMessage('No response received from the server');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error('Error message:', error.message);
+        setErrorMessage(error.message);
+      }
       }
     };
 
@@ -76,6 +93,9 @@ fetchUserProfile(employeeId, programId, referralId, bearerToken);
             onClick={togglePasswordVisibility}
           />
         </div>
+        {errorMessage && (
+        <div style={{ color: 'red' }}>{errorMessage}</div>
+      )}
         <button className="login-button"onClick={handleLogin} >
           Login
           </button>
